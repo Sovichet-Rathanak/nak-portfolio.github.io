@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    height: 100%; /* Ensure the body takes up full height */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure the body is at least the height of the viewport */
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Animation */
+.nav_end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    box-shadow: 1px 1px 5px;
+    padding: 2rem;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Initially offset from above */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animate both opacity and position */
+}
+
+header.animate-nav .nav_end {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.nav_start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav_buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav_buttons button, #home-btn {
+    margin: .5rem;
+    padding: 1rem;
+    height: fit-content;
+    background: none; 
+    border: none; 
+    color: inherit; 
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer; 
+    font-size: 1.2rem;
+}
+
+.nav_buttons button:hover, #home-btn:hover {
+    color: #f0244c;
+    font-weight: bolder;
+    transition: all .5s ease-in-out;
+}
+
+main {
+    flex: 1; /* Take up remaining space between header and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.about-me {
+    flex: 1;
+    padding-right: 2.5rem; /* Adds space between About Me and the profile image */
+}
+
+.about-me h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+/* Typing Animation */
+.typing-header {
+    display: inline-block; /* Ensures the element takes up only as much width as necessary */
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: .15em solid #f0244c; 
+    animation: typing 2.5s steps(30, end) forwards, blink .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: fit-content; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #f0244c; }
+}
+
+/* Dropdown Animation for About Me Content */
+.about-me-content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Initially offset from above */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animate both opacity and position */
+}
+
+.about-me.expanded .about-me-content {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.about-me p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Highlight Animation */
+.name-highlight {
+    font-weight: bold;
+    color: transparent; /* Start as transparent */
+    transition: color 2s ease-in-out; /* Smooth color transition */
+}
+
+.about-me.expanded .name-highlight {
+    color: #f0244c; /* Final color (red) */
+}
+
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+}
+
+.profile-image img {
+    width: 450px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10rem;
+}
+
+footer {
+    background-color: #28282B;
+    color: #fff; 
+    padding: 1rem; 
+    text-align: center; 
+    position: relative; 
+    bottom: 0; 
+    width: auto;  
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    font-weight: bold; /* Make contact heading stand out */
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center; /* Center-align the contact links */
+    gap: 1rem; /* Space between the links */
+}
+
+.footer-link {
+    color: #f0244c; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.edu-list{
+    font-size: 1.5rem;
+    height: 25rem;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 720px; /* Adjust width */
+    height: 405px; /* Adjust height to maintain 16:9 ratio */
+    max-width: 100%; /* Responsive design */
+    border: none;
+}
+
+.project_header{
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.projects{
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0; /* Removes the default padding */
+    margin: 0; /* Removes the default margin */
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.txt_img{
+    width: 720px; 
+    height: 405px; 
+    max-width: 100%; 
+    border: none;
+}
+
+.automata_img{
+    width: 720px; 
+    height: 405px; 
+    max-width: 100%; 
+    border: 1px solid black;
+}
+
+#txt_btn, #automata_btn{
+    margin: .5rem;
+    padding: 1rem;
+    height: fit-content;
+    background: none; 
+    border: none; 
+    color: inherit; 
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    cursor: pointer; 
+    font-size: 1rem;
+}
+
+#txt_btn:hover, #automata_btn:hover{
+    color: #f0244c;
+    font-weight: bolder;
+    transition: all .5s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.dark-mode, 
+footer.dark-mode, 
+.typing-header.dark-mode, 
+.name-highlight.dark-mode{
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: all .5s ease-in-out;
+}
+
+
+
