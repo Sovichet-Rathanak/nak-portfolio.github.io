@@ -278,3 +278,45 @@ footer.dark-mode,
     transition: color 0.5s ease-in-out;
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .nav_buttons {
+        flex-direction: column;
+    }
+
+    .profile-image img {
+        width: 100%; /* Adjust to fit smaller screens */
+        max-width: 100%; /* Prevent overflow */
+    }
+
+    .about-me {
+        padding-right: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .typing-header {
+        font-size: 2rem; /* Smaller font size on smaller screens */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer content vertically */
+    }
+
+    .contact-links {
+        flex-direction: column; /* Stack links vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav_buttons button, #home-btn {
+        font-size: 1rem; /* Smaller buttons on smaller screens */
+    }
+
+    .about-me p {
+        font-size: 1rem; /* Smaller font size for paragraphs */
+    }
+
+    .video-container iframe {
+        width: 100%; /* Full width for small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
