@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'https://darororo.github.io/fortnite-automaton/';
     });
 
+    document.getElementById('game_btn')?.addEventListener('click', () => {
+        window.location.href = 'https://pinkksoda.itch.io/wanderer';
+    });
+
     // Function to apply dark mode based on local storage
     const applyDarkMode = () => {
         if (localStorage.getItem('dark-mode') === 'enabled') {
